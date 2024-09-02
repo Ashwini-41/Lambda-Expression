@@ -3,6 +3,7 @@ package com;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.*;
 
 public class LambdaExpression {
@@ -49,12 +50,24 @@ public class LambdaExpression {
 			System.out.println("Method 5: For each implementation value :: " + n);
 		});
 		
+		// For double value
 		Function<Integer,Double> doubleV = n -> n * 2.0;
 		
 		list.forEach(n -> {
 			Double doubled = doubleV.apply(n);
 			System.out.println("Double Value: " + doubled);
 		});
+		
+		// print only even numbers
+		
+		Predicate<Integer> iseven = n -> n%2 == 0;
+		
+		list.forEach(n ->{
+			if(iseven.test(n)) {
+				System.out.println("Even numbers: " + n);
+			}
+		});
+		
 	
 	}
 }
