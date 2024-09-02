@@ -14,9 +14,12 @@ public class LambdaExpression {
 		MathOperation division = (a,b) -> a / b;
 		
 		System.out.println("Addition : " + addition.calculate(30, 20));
+		
 		System.out.println("Substraction : " + substraction.calculate(30, 20));
+		
 		System.out.println("Multiplication: " + multiply.calculate(30, 20));
-		System.out.println("Division:  " + division.calculate(30, 20));
+		
+		System.out.println("Division:  " + division.calculate(60, 20));
 		
 		
 	}
