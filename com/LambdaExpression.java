@@ -2,6 +2,7 @@ package com;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.*;
 
 public class LambdaExpression {
@@ -48,6 +49,12 @@ public class LambdaExpression {
 			System.out.println("Method 5: For each implementation value :: " + n);
 		});
 		
+		Function<Integer,Double> doubleV = n -> n * 2.0;
+		
+		list.forEach(n -> {
+			Double doubled = doubleV.apply(n);
+			System.out.println("Double Value: " + doubled);
+		});
 	
 	}
 }
