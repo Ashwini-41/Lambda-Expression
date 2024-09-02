@@ -5,6 +5,10 @@ public class LambdaExpression {
 	@FunctionalInterface
 	interface MathOperation{
 		int calculate(int a, int b );
+		
+		static void result(int a, int b, String function, MathOperation obj) {
+			System.out.println("Result of " + function + " is " + obj.calculate(a, b));
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -13,14 +17,10 @@ public class LambdaExpression {
 		MathOperation multiply = (a,b) -> a*b;
 		MathOperation division = (a,b) -> a / b;
 		
-		System.out.println("Addition : " + addition.calculate(30, 20));
-		
-		System.out.println("Substraction : " + substraction.calculate(30, 20));
-		
-		System.out.println("Multiplication: " + multiply.calculate(30, 20));
-		
-		System.out.println("Division:  " + division.calculate(60, 20));
-		
-		
+
+		MathOperation.result(10,20,"Addition",addition);
+		MathOperation.result(30,10,"Substraction",substraction);
+		MathOperation.result(10,20,"Multiply",multiply);
+		MathOperation.result(60,20,"Division",division);
 	}
 }
